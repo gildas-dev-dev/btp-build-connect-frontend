@@ -11,21 +11,21 @@
       </span>
     </a>
 
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <button class="navbar-toggler border-0" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
       <i class="fa-solid fa-bars fs-4 text-secondary"></i>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" [class.show]="!isMenuCollapsed" id="navbarNav">
       <ul class="navbar-nav mx-auto align-items-lg-center gap-2 gap-lg-4 py-3 py-lg-0">
-        <li class="nav-item"><a class="nav-link active fw-semibold" routerLink="/public" style="color: var(--primary) !important;">Accueil</a></li>
-        <li class="nav-item"><a class="nav-link fw-medium" href="#specialites">Spécialités</a></li>
-        <li class="nav-item"><a class="nav-link fw-medium" href="#comment-ca-marche">Comment ça marche</a></li>
+        <li class="nav-item"><a class="nav-link active fw-semibold" routerLink="/public" (click)="isMenuCollapsed = true" style="color: var(--primary) !important;">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link fw-medium" href="#specialites" (click)="isMenuCollapsed = true">Spécialités</a></li>
+        <li class="nav-item"><a class="nav-link fw-medium" href="#comment-ca-marche" (click)="isMenuCollapsed = true">Comment ça marche</a></li>
       </ul>
       <div class="d-flex flex-column flex-lg-row gap-2">
-        <a routerLink="/general/login" class="btn btn-light fw-semibold rounded-pill px-4" style="color: var(--secondary-light); border: 1px solid rgba(15,23,42,0.1);">
+        <a routerLink="/general/login" class="btn btn-light fw-semibold rounded-pill px-4" (click)="isMenuCollapsed = true" style="color: var(--secondary-light); border: 1px solid rgba(15,23,42,0.1);">
           Connexion
         </a>
-        <a routerLink="/general/register" class="btn btn-primary-custom px-4">
+        <a routerLink="/general/register" class="btn btn-primary-custom px-4" (click)="isMenuCollapsed = true">
           Inscription
         </a>
       </div>
