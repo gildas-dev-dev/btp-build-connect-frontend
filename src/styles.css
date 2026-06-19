@@ -1,1 +1,108 @@
-/* You can add global styles to this file, and also import other style files */
+/* CSS global pour BTP_BuildConnect */
+:root {
+  /* Palette de couleurs Premium */
+  --primary: #F59E0B; /* Amber BTP */
+  --primary-dark: #D97706;
+  --primary-light: #FEF3C7;
+  --secondary: #0F172A; /* Slate 900 */
+  --secondary-light: #1E293B; /* Slate 800 */
+  --accent: #3B82F6; /* Blue modern */
+  --light-bg: #F8FAFC;
+  --white: #FFFFFF;
+  --text-main: #334155;
+  --text-muted: #64748B;
+  --border: rgba(15, 23, 42, 0.08);
+  
+  /* Glassmorphism & Ombres Douces */
+  --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.02);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -1px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
+  
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  
+  /* Radius Modernes */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-pill: 9999px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+  background-color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  color: var(--secondary);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Utilitaires Globaux */
+.text-primary { color: var(--primary) !important; }
+.bg-primary { background-color: var(--primary) !important; }
+.text-secondary { color: var(--secondary) !important; }
+.bg-secondary { background-color: var(--secondary) !important; }
+.bg-light-custom { background-color: var(--light-bg) !important; }
+
+/* Boutons Premium */
+.btn {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary-custom {
+  background: var(--primary);
+  color: var(--secondary);
+  border: none;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+}
+
+.btn-primary-custom:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.4);
+  color: var(--secondary);
+}
+
+.btn-secondary-custom {
+  background: var(--secondary);
+  color: var(--white);
+  border: none;
+}
+
+.btn-secondary-custom:hover {
+  background: var(--secondary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  color: var(--white);
+}
+
+/* Animations Globales */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Utilities Glass */
+.glass-effect {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
