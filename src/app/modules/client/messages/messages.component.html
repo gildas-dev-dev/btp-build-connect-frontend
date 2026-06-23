@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+<div class="container page">
+  <div class="row between center"><h2>Messagerie</h2><span class="badge">Asynchrone · pièces jointes supportées</span></div>
+
+  <div class="msg-layout mt-3">
+    <div class="conv-list">
+      <div style="padding:1rem;border-bottom:1px solid var(--line)">
+        <div class="input-icon"><span class="ic"><i class="fa-solid fa-magnifying-glass"></i></span><input class="input" placeholder="Rechercher..."></div>
+      </div>
+      <div class="conv" [class.active]="c.active" *ngFor="let c of conversations">
+        <span class="avatar sm">{{c.initiales}}</span>
+        <div class="txt">
+          <div class="row between"><b style="font-size:.9rem">{{c.nom}}</b><small class="muted">{{c.heure}}</small></div>
+          <p>{{c.apercu}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="thread">
+      <div class="head">
+        <span class="avatar sm">MA</span>
+        <div><b>Marc A.</b><br><small class="muted">En ligne</small></div>
+        <span class="badge dispo" style="margin-left:auto">Mise en relation tracée</span>
+      </div>
+      <div class="body">
+        <div class="bubble in">Bonjour Jean-Paul, j'aimerais un devis pour la construction d'une terrasse de 25m².<span class="t">10:18</span></div>
+        <div class="bubble in" style="padding:0;overflow:hidden;max-width:240px"><div class="ph" style="height:140px"></div><div style="padding:.5rem .8rem">📎 plan-terrasse.jpg<span class="t">10:19</span></div></div>
+        <div class="bubble out">Bonjour Marc ! Merci pour le plan. Pour 25m² en carrelage extérieur, je peux passer estimer sur place jeudi. Mon tarif est de 15 000 FCFA/jour.<span class="t">10:22</span></div>
+        <div class="bubble in">Parfait, jeudi me convient. Vers 9h ?<span class="t">10:24</span></div>
+      </div>
+      <div class="composer">
+        <button class="btn btn-ghost btn-sm"><i class="fa-solid fa-paperclip"></i></button>
+        <input class="input" placeholder="Écrivez votre message...">
+        <button class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+</div>

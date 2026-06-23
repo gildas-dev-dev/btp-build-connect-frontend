@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<div class="container page" style="max-width:880px">
+  <span class="eyebrow">Inscription professionnel</span>
+  <h2 class="mt-1">Rejoignez BuildConnect</h2>
+
+  <div class="stepper">
+    <div class="st done"><span class="dot"><i class="fa-solid fa-check"></i></span> Informations</div><div class="bar"></div>
+    <div class="st cur"><span class="dot">2</span> Spécialités</div><div class="bar"></div>
+    <div class="st"><span class="dot">3</span> Documents (KYC)</div><div class="bar"></div>
+    <div class="st"><span class="dot">4</span> Abonnement</div>
+  </div>
+
+  <div class="card card-pad">
+    <h4>Étape 2 — Vos spécialités <span class="muted" style="font-weight:400;font-size:.85rem">(multi-spécialités)</span></h4>
+    <p class="muted mt-1">Sélectionnez un ou plusieurs corps de métier. Le tarif d'abonnement dépend du nombre de spécialités.</p>
+    <div class="spec-pick mt-3">
+      <span class="chip active"><i class="fa-solid fa-trowel-bricks"></i> Maçonnerie</span>
+      <span class="chip active"><i class="fa-solid fa-border-all"></i> Carrelage</span>
+      <span class="chip"><i class="fa-solid fa-bolt"></i> Électricité</span>
+      <span class="chip"><i class="fa-solid fa-wrench"></i> Plomberie</span>
+      <span class="chip"><i class="fa-solid fa-paint-roller"></i> Peinture</span>
+      <span class="chip"><i class="fa-solid fa-ruler-combined"></i> Menuiserie</span>
+    </div>
+    <div class="form-grid mt-3">
+      <div class="field"><label>Années d'expérience (Maçonnerie)</label><input class="input" value="18"></div>
+      <div class="field"><label>Années d'expérience (Carrelage)</label><input class="input" value="10"></div>
+      <div class="field"><label>Tarif indicatif (FCFA / jour)</label><input class="input" value="15 000"></div>
+      <div class="field"><label>Ville d'exercice</label><select class="select"><option>Yaoundé</option><option>Douala</option><option>Bafoussam</option></select></div>
+      <div class="field" style="grid-column:1/-1"><label>Présentation (bio)</label><textarea class="textarea" rows="3">Maçon professionnel avec plus de 18 ans d'expérience...</textarea></div>
+    </div>
+    <div class="row between mt-3"><button class="btn btn-outline">← Précédent</button><button class="btn btn-primary">Continuer vers les documents →</button></div>
+  </div>
+
+  <div class="card card-pad mt-3">
+    <h4>Étape 3 — Justificatifs (vérification KYC)</h4>
+    <p class="muted mt-1">Votre profil sera examiné par un administrateur avant publication. Formats : JPG, PNG, PDF — 5 Mo max.</p>
+    <div class="form-grid mt-3">
+      <div class="dropzone"><i class="fa-solid fa-file-arrow-up" style="font-size:1.6rem"></i><div><b>Pièce d'identité (CNI)</b></div><small>Glissez-déposez ou cliquez</small></div>
+      <div class="dropzone"><i class="fa-solid fa-file-arrow-up" style="font-size:1.6rem"></i><div><b>Diplôme / Attestation</b></div><small>Glissez-déposez ou cliquez</small></div>
+    </div>
+    <div class="card mt-2" style="background:var(--warning-bg);border:0;padding:.8rem 1rem;color:#92400e;font-size:.85rem">
+      <i class="fa-solid fa-triangle-exclamation"></i> Un profil non validé n'apparaît pas dans les résultats de recherche.
+    </div>
+    <a class="btn btn-primary mt-3" routerLink="/tarifs">Continuer vers l'abonnement →</a>
+  </div>
+</div>
+
+<app-footer></app-footer>

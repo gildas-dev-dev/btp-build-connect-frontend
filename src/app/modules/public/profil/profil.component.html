@@ -1,0 +1,80 @@
+<app-header></app-header>
+
+<div class="container page">
+  <div class="profile-hero">
+    <div class="cover"></div>
+    <div class="profile-id">
+      <div class="av">JP</div>
+      <div style="padding-bottom:.6rem">
+        <div class="row center gap-1"><h2 style="color:#fff;font-size:1.7rem;text-shadow:0 2px 8px rgba(0,0,0,.3)">Jean-Paul M.</h2><span class="badge verified"><i class="fa-solid fa-circle-check"></i> Vérifié</span></div>
+        <div class="row center gap-1" style="color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.4)"><i class="fa-solid fa-location-dot"></i> Yaoundé · Maçonnerie & Carrelage</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-layout">
+    <div class="col gap-3">
+      <div class="card card-pad">
+        <div class="row between center wrap gap-2">
+          <div class="row center gap-2">
+            <span class="badge dispo">● Disponible</span>
+            <span><span class="stars">★★★★★</span> <b>4.8</b> <span class="muted">(124 avis)</span></span>
+          </div>
+          <div class="row gap-1"><span class="badge"><i class="fa-solid fa-award"></i> 18 recommandations</span><span class="badge">42 projets validés</span></div>
+        </div>
+        <h4 class="mt-3">À propos</h4>
+        <p class="mt-1">Maçon professionnel avec plus de 18 ans d'expérience dans la construction et la rénovation au Cameroun. Spécialisé en gros œuvre, carrelage et finitions soignées. Disponible pour chantiers résidentiels et commerciaux.</p>
+        <div class="row gap-1 wrap mt-2">
+          <span class="chip">Maçonnerie</span><span class="chip">Carrelage</span><span class="chip">Rénovation</span><span class="chip">Gros œuvre</span>
+        </div>
+      </div>
+
+      <div class="card card-pad">
+        <div class="row between center"><h4>Portfolio</h4><a class="text-blue fw-600" style="font-size:.85rem">12 réalisations</a></div>
+        <div class="gallery mt-2">
+          <div class="g ph" *ngFor="let g of galerie"></div>
+        </div>
+      </div>
+
+      <div class="card card-pad">
+        <h4>Recommandations entre pairs</h4>
+        <div class="review"><div class="row gap-2 center"><span class="avatar sm">ET</span><div><b>Éric T.</b> <span class="badge">Électricien</span><p class="muted" style="font-size:.85rem">« Travail de maçonnerie impeccable, je recommande Jean-Paul pour tout projet de carrelage. »</p></div></div></div>
+        <div class="review"><div class="row gap-2 center"><span class="avatar sm">SF</span><div><b>Sophie F.</b> <span class="badge">Plombier</span><p class="muted" style="font-size:.85rem">« Collaboration parfaite sur plusieurs chantiers. Sérieux et ponctuel. »</p></div></div></div>
+      </div>
+
+      <div class="card card-pad">
+        <div class="row between center"><h4>Avis clients (vérifiés)</h4><span class="stars">★★★★★ <b style="color:var(--ink-800)">4.8</b></span></div>
+        <div class="review">
+          <div class="row between"><div class="row gap-2 center"><span class="avatar sm">MA</span><div><b>Marc A.</b><div class="stars" style="font-size:.8rem">★★★★★</div></div></div><small class="muted">Il y a 5 jours</small></div>
+          <p class="mt-1">Excellent travail sur la rénovation de ma terrasse. Délais respectés et finitions parfaites.</p>
+          <div class="card" style="background:var(--blue-50);border:0;padding:.7rem .9rem;margin-top:.6rem;font-size:.85rem"><b class="text-blue">Réponse de Jean-Paul :</b> Merci Marc, ce fut un plaisir !</div>
+        </div>
+        <div class="review">
+          <div class="row between"><div class="row gap-2 center"><span class="avatar sm">FN</span><div><b>Fatou N.</b><div class="stars" style="font-size:.8rem">★★★★<span class="off">★</span></div></div></div><small class="muted">Il y a 2 sem.</small></div>
+          <p class="mt-1">Bon professionnel, travail soigné. Je referai appel à lui.</p>
+        </div>
+      </div>
+    </div>
+
+    <aside class="side-card col gap-3">
+      <div class="card card-pad">
+        <div class="kv"><span class="muted">Tarif indicatif</span><b>15 000 FCFA / jour</b></div>
+        <div class="kv"><span class="muted">Expérience</span><b>18 ans</b></div>
+        <div class="kv"><span class="muted">Temps de réponse</span><b>~ 2 h</b></div>
+        <div class="kv"><span class="muted">Membre depuis</span><b>2021</b></div>
+        <a class="btn btn-primary btn-block mt-3" routerLink="/client/messages"><i class="fa-solid fa-paper-plane"></i> Demander un devis</a>
+        <a class="btn btn-outline btn-block mt-2" routerLink="/client/messages"><i class="fa-regular fa-comment"></i> Contacter</a>
+        <button class="btn btn-ghost btn-block mt-2"><i class="fa-regular fa-heart"></i> Ajouter aux favoris</button>
+        <a class="row center gap-1 muted mt-3" style="font-size:.8rem;justify-content:center;cursor:pointer"><i class="fa-regular fa-flag"></i> Signaler ce profil</a>
+      </div>
+      <div class="card card-pad">
+        <h5>Vérifications</h5>
+        <div class="row center gap-1 mt-2" style="font-size:.88rem"><i class="fa-solid fa-circle-check" style="color:var(--success)"></i> Pièce d'identité (CNI)</div>
+        <div class="row center gap-1 mt-1" style="font-size:.88rem"><i class="fa-solid fa-circle-check" style="color:var(--success)"></i> Diplôme / Attestation</div>
+        <div class="row center gap-1 mt-1" style="font-size:.88rem"><i class="fa-solid fa-circle-check" style="color:var(--success)"></i> Abonnement annuel actif</div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<app-footer></app-footer>

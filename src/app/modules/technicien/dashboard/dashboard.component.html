@@ -1,0 +1,58 @@
+<app-header></app-header>
+
+<div class="container page">
+  <div class="dash">
+    <aside class="dash-side">
+      <div class="row center gap-2" style="padding:.4rem .9rem 1rem"><span class="avatar sm" style="color:#fff;background:var(--blue-600)">JP</span><div><b style="color:#fff;font-size:.9rem">Jean-Paul M.</b><br><small style="color:#94a3b8">Maçonnerie</small></div></div>
+      <div class="item active"><i class="fa-solid fa-table-columns"></i> Tableau de bord</div>
+      <div class="item"><i class="fa-solid fa-user"></i> Mon profil</div>
+      <div class="item"><i class="fa-solid fa-comment-dots"></i> Demandes &amp; devis</div>
+      <div class="item"><i class="fa-solid fa-star"></i> Avis &amp; recommandations</div>
+      <div class="item"><i class="fa-solid fa-images"></i> Portfolio</div>
+      <div class="item"><i class="fa-solid fa-credit-card"></i> Abonnement</div>
+      <div class="item"><i class="fa-solid fa-gear"></i> Paramètres</div>
+      <div class="item" style="margin-top:1rem;color:#f87171"><i class="fa-solid fa-right-from-bracket"></i> Déconnexion</div>
+    </aside>
+
+    <div class="dash-main">
+      <div class="row between center wrap gap-2">
+        <div><h2>Bonjour, Jean-Paul 👋</h2><p class="muted">Voici l'activité de votre profil</p></div>
+        <span class="badge gold"><i class="fa-solid fa-award"></i> Abonnement Annuel · expire le 12/03/2027</span>
+      </div>
+
+      <div class="stat-grid mt-3">
+        <div class="stat"><div class="ico"><i class="fa-solid fa-eye"></i></div><div class="n">48</div><small class="muted">Vues du profil (30j)</small><div class="text-blue" style="font-size:.78rem;font-weight:600">↑ 12%</div></div>
+        <div class="stat"><div class="ico"><i class="fa-solid fa-comment-dots"></i></div><div class="n">32</div><small class="muted">Contacts reçus</small><div class="text-blue" style="font-size:.78rem;font-weight:600">↑ 8%</div></div>
+        <div class="stat"><div class="ico"><i class="fa-solid fa-check"></i></div><div class="n">24</div><small class="muted">Projets validés</small></div>
+        <div class="stat"><div class="ico"><i class="fa-solid fa-star"></i></div><div class="n">4.8</div><small class="muted">Note moyenne</small></div>
+      </div>
+
+      <div class="grid mt-3" style="grid-template-columns:1.6fr 1fr;gap:20px">
+        <div class="card card-pad">
+          <div class="row between center"><h4>Demandes récentes</h4><a class="text-blue fw-600" style="font-size:.85rem" routerLink="/client/messages">Tout voir</a></div>
+          <table class="tbl mt-2">
+            <thead><tr><th>Client</th><th>Type</th><th>Date</th><th>Statut</th></tr></thead>
+            <tbody>
+              <tr *ngFor="let d of demandes">
+                <td><b>{{d.client}}</b><br><small class="muted">{{d.objet}}</small></td>
+                <td>{{d.type}}</td>
+                <td>{{d.date}}</td>
+                <td><span class="badge" [ngClass]="d.statutClass">{{d.statut}}</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card card-pad">
+          <h4>Mon abonnement</h4>
+          <div class="card mt-2" style="background:linear-gradient(120deg,var(--blue-700),var(--blue-500));color:#fff;border:0;padding:1.2rem">
+            <small style="opacity:.85">Formule actuelle</small><div style="font-family:'Outfit';font-weight:800;font-size:1.4rem">Annuel</div>
+            <div style="opacity:.9;font-size:.85rem;margin-top:.4rem">Actif jusqu'au 12 mars 2027</div>
+            <div style="background:rgba(255,255,255,.25);height:6px;border-radius:9px;margin-top:.8rem"><div style="width:72%;height:100%;background:#fff;border-radius:9px"></div></div>
+          </div>
+          <a class="btn btn-primary btn-block mt-2" routerLink="/tarifs">Renouveler</a>
+          <small class="muted mt-2" style="display:block">🔔 Rappel automatique J-7 et J-1 avant expiration.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

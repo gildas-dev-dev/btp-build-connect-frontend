@@ -1,0 +1,80 @@
+<app-header></app-header>
+
+<div class="container page">
+  <div class="page-head row between center wrap gap-2">
+    <div><h2>Trouver un professionnel</h2><p class="muted">128 professionnels vérifiés à Yaoundé</p></div>
+    <div class="search-box" style="margin:0;box-shadow:var(--sh-sm)">
+      <div class="input-icon"><span class="ic"><i class="fa-solid fa-magnifying-glass"></i></span><input class="input" value="Électricien" style="width:180px"></div>
+      <div class="input-icon"><span class="ic"><i class="fa-solid fa-location-dot"></i></span><input class="input" value="Yaoundé" style="width:150px"></div>
+      <button class="btn btn-primary">Rechercher</button>
+    </div>
+  </div>
+
+  <div class="search-layout mt-3">
+    <aside class="filters card card-pad">
+      <h4 style="font-size:1.05rem">Filtres</h4>
+      <div class="filter-group"><h5>Spécialité</h5>
+        <label class="check"><input type="checkbox" checked> Électricité</label>
+        <label class="check"><input type="checkbox"> Plomberie</label>
+        <label class="check"><input type="checkbox"> Maçonnerie</label>
+        <label class="check"><input type="checkbox"> Peinture</label>
+        <label class="check"><input type="checkbox"> Menuiserie</label>
+      </div>
+      <div class="filter-group"><h5>Disponibilité</h5>
+        <label class="check"><input type="radio" name="d" checked> Disponible maintenant</label>
+        <label class="check"><input type="radio" name="d"> Toutes</label>
+      </div>
+      <div class="filter-group"><h5>Note minimale</h5>
+        <div class="row gap-1 wrap">
+          <span class="chip active">★ 4.5+</span><span class="chip">★ 4.0+</span><span class="chip">★ 3.5+</span>
+        </div>
+      </div>
+      <div class="filter-group"><h5>Distance</h5>
+        <input type="range" min="1" max="50" value="15" style="width:100%;accent-color:var(--blue-600)">
+        <small class="muted">Rayon : 15 km</small>
+      </div>
+      <div class="filter-group"><h5>Tri</h5>
+        <select class="select">
+          <option>Pertinence (abonnement + note)</option>
+          <option>Note décroissante</option>
+          <option>Proximité</option>
+          <option>Projets réalisés</option>
+        </select>
+      </div>
+      <button class="btn btn-primary btn-block mt-2">Appliquer</button>
+    </aside>
+
+    <div>
+      <div class="map">
+        <div class="pin" style="top:60px;left:120px"><b>JP</b></div>
+        <div class="pin" style="top:130px;left:300px"><b>M</b></div>
+        <div class="pin" style="top:90px;left:480px"><b>S</b></div>
+        <div class="pin" style="top:180px;left:200px"><b>D</b></div>
+        <div style="position:absolute;right:14px;top:14px" class="badge"><i class="fa-solid fa-location-dot"></i> Carte interactive — Géolocalisation</div>
+      </div>
+
+      <div class="result-row" *ngFor="let p of resultats">
+        <div class="avatar lg" style="border-radius:14px">{{p.initiales}}</div>
+        <div style="flex:1">
+          <div class="row between center">
+            <div class="row center gap-1"><h4 style="font-size:1.1rem">{{p.nom}}</h4><span class="badge verified"><i class="fa-solid fa-circle-check"></i> Vérifié</span></div>
+            <span class="badge" [ngClass]="dispoClass(p.dispo)">● {{p.dispo}}</span>
+          </div>
+          <div class="pro-meta"><i class="fa-solid fa-location-dot"></i> {{p.ville}} · {{p.specialite}} · {{p.exp}} d'expérience</div>
+          <div class="tags" style="display:flex;gap:.35rem;margin:.6rem 0">
+            <span class="badge" *ngFor="let t of p.tags">{{t}}</span>
+          </div>
+          <div class="row between center">
+            <span><span class="stars" style="font-size:.9rem">★★★★★</span> <b>{{p.note}}</b> <small class="muted">({{p.avis}} avis)</small> · <span class="text-blue fw-600">{{p.recos}} recommandations</span></span>
+            <div class="row gap-1">
+              <button class="btn btn-ghost btn-sm"><i class="fa-regular fa-heart"></i></button>
+              <a class="btn btn-primary btn-sm" routerLink="/professionnels/1">Demander un devis</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

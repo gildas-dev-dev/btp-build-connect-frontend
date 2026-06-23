@@ -1,415 +1,102 @@
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-glass">
+<app-header></app-header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge"><i class="fa-solid fa-location-dot"></i> Disponible dans tout le Cameroun</span>
+      <h1 class="mt-2">Trouvez le bon <span class="text-blue">professionnel du bâtiment</span> près de chez vous</h1>
+      <p class="lead">BuildConnect vous met en relation avec des techniciens qualifiés et vérifiés. Recherchez, comparez, contactez — en toute confiance.</p>
+      <div class="search-box">
+        <div class="input-icon"><span class="ic"><i class="fa-solid fa-magnifying-glass"></i></span><input class="input" placeholder="Quelle prestation recherchez-vous ?"></div>
+        <div class="input-icon" style="max-width:230px"><span class="ic"><i class="fa-solid fa-location-dot"></i></span><input class="input" placeholder="Ville (ex. Yaoundé)"></div>
+        <a class="btn btn-primary" routerLink="/recherche">Rechercher</a>
+      </div>
+      <div class="stats">
+        <div><div class="n">+2 500</div><small class="muted">Professionnels</small></div>
+        <div><div class="n">+1 500</div><small class="muted">Clients satisfaits</small></div>
+        <div><div class="n">+50</div><small class="muted">Spécialités</small></div>
+        <div><div class="n">20+</div><small class="muted">Villes couvertes</small></div>
+      </div>
+    </div>
+    <div class="hero-photo ph">
+      👷
+      <div class="float f1"><i class="fa-solid fa-circle-check" style="color:var(--success)"></i> Profils vérifiés (KYC)</div>
+      <div class="float f2"><span class="stars">★★★★★</span> 4.8 / 5 · 12k avis</div>
+    </div>
+  </div>
+</section>
+
+<!-- CATÉGORIES -->
+<section class="block" style="padding-top:0">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" routerLink="/public">
-      <div class="logo-icon d-flex align-items-center justify-content-center rounded-circle"
-           style="background: var(--primary); color: white; font-weight: 800; font-size: 1.1rem; width: 40px; height: 40px;">
-        BC
-      </div>
-      <span style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.25rem; color: var(--secondary); letter-spacing: -0.5px;">
-        BTP<span style="color: var(--primary);">Connect</span>
-      </span>
-    </a>
-
-    <button class="navbar-toggler border-0" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
-      <i class="fa-solid fa-bars fs-4 text-secondary"></i>
-    </button>
-
-    <div class="collapse navbar-collapse" [class.show]="!isMenuCollapsed" id="navbarNav">
-      <ul class="navbar-nav mx-auto align-items-lg-center gap-2 gap-lg-4 py-3 py-lg-0">
-        <li class="nav-item"><a class="nav-link active fw-semibold" routerLink="/public" (click)="isMenuCollapsed = true" style="color: var(--primary) !important;">Accueil</a></li>
-        <li class="nav-item"><a class="nav-link fw-medium" href="#specialites" (click)="isMenuCollapsed = true">Spécialités</a></li>
-        <li class="nav-item"><a class="nav-link fw-medium" href="#comment-ca-marche" (click)="isMenuCollapsed = true">Comment ça marche</a></li>
-      </ul>
-      <div class="d-flex flex-column flex-lg-row gap-2">
-        <a routerLink="/general/login" class="btn btn-light fw-semibold rounded-pill px-4" (click)="isMenuCollapsed = true" style="color: var(--secondary-light); border: 1px solid rgba(15,23,42,0.1);">
-          Connexion
-        </a>
-        <a routerLink="/general/register" class="btn btn-primary-custom px-4" (click)="isMenuCollapsed = true">
-          Inscription
-        </a>
-      </div>
+    <div class="row between center">
+      <div><span class="eyebrow">Corps de métier</span><h2 class="sec-title mt-1">Catégories populaires</h2></div>
+      <a class="btn btn-ghost btn-sm" routerLink="/recherche">Voir tout <i class="fa-solid fa-arrow-right"></i></a>
     </div>
-  </div>
-</nav>
-
-<!-- HERO SECTION -->
-<section class="hero-section pb-5">
-  <!-- Arrière-plans blobs -->
-  <div class="hero-bg-blobs">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-  </div>
-
-  <div class="container position-relative" style="z-index: 5;">
-    <div class="row align-items-center min-vh-75 g-5">
-      
-      <!-- Texte de gauche -->
-      <div class="col-lg-6 animate-fade-in">
-        <span class="badge rounded-pill px-3 py-2 mb-4 d-inline-flex align-items-center gap-2"
-              style="background: rgba(15,23,42,0.05); color: var(--secondary-light); border: 1px solid rgba(15,23,42,0.1); font-size: 0.8rem;">
-          <span style="display:inline-block; width:8px; height:8px; background:var(--primary); border-radius:50%;"></span>
-          La plateforme BTP #1 au Cameroun
-        </span>
-        
-        <h1 class="hero-title mb-4">
-          Trouvez les meilleurs <br class="d-none d-lg-block">
-          <span style="color: var(--primary);">professionnels du BTP</span><br class="d-none d-lg-block">
-          près de chez vous
-        </h1>
-        
-        <p class="hero-subtitle mb-5">
-          Plombiers, électriciens, maçons, peintres... Comparez les profils, consultez les avis vérifiés et contactez directement l'artisan idéal pour vos projets.
-        </p>
-
-        <!-- Barre de recherche Premium -->
-        <div class="search-box-wrapper mb-4 animate-fade-in delay-100">
-          <div class="search-box">
-            <div class="search-field">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input type="text" placeholder="Ex: Plombier, Électricien..." aria-label="Spécialité">
-            </div>
-            <div class="search-field">
-              <i class="fa-solid fa-location-dot"></i>
-              <input type="text" placeholder="Ville (Ex: Douala)" aria-label="Ville">
-            </div>
-            <button class="btn btn-primary-custom" style="padding: 0.75rem 2rem; font-size: 1rem;">
-              Rechercher
-            </button>
-          </div>
-        </div>
-
-        <div class="hero-stats d-flex align-items-center gap-4 animate-fade-in delay-200" style="color: var(--text-muted); font-size: 0.9rem; font-weight: 500;">
-          <span class="d-flex align-items-center gap-2"><i class="fa-solid fa-shield-check text-success fs-5"></i> 100% Gratuit</span>
-          <span class="d-flex align-items-center gap-2"><i class="fa-solid fa-star text-warning fs-5"></i> +500 Pros certifiés</span>
-        </div>
-      </div>
-
-      <!-- Illustration de droite (Glassmorphism) -->
-      <div class="col-lg-6 d-none d-lg-block">
-        <div class="hero-illustration-container d-flex justify-content-center align-items-center h-100">
-          
-          <!-- Card principale Glass -->
-          <div class="glass-card-main p-4" style="width: 400px;">
-            <div class="d-flex align-items-center gap-2 mb-4">
-              <div class="rounded-circle" style="width: 12px; height: 12px; background: #EF4444;"></div>
-              <div class="rounded-circle" style="width: 12px; height: 12px; background: #F59E0B;"></div>
-              <div class="rounded-circle" style="width: 12px; height: 12px; background: #22C55E;"></div>
-            </div>
-
-            <div class="d-flex flex-column gap-3">
-              <!-- Pro 1 -->
-              <div class="pro-item p-3 d-flex align-items-center gap-3">
-                <img src="https://i.pravatar.cc/100?img=11" alt="Avatar" class="rounded-circle" style="width: 48px; height: 48px; object-fit: cover;">
-                <div style="min-width: 0;">
-                  <div class="text-white fw-semibold" style="font-size: 0.95rem;">Jean Kamga</div>
-                  <div style="color: #94A3B8; font-size: 0.8rem;">Plombier · Douala</div>
-                </div>
-                <div class="ms-auto d-flex align-items-center gap-1 bg-warning bg-opacity-10 text-warning px-2 py-1 rounded">
-                  <i class="fa-solid fa-star" style="font-size: 0.75rem;"></i><span class="fw-bold" style="font-size: 0.8rem;">4.9</span>
-                </div>
-              </div>
-
-              <!-- Pro 2 -->
-              <div class="pro-item p-3 d-flex align-items-center gap-3">
-                <img src="https://i.pravatar.cc/100?img=5" alt="Avatar" class="rounded-circle" style="width: 48px; height: 48px; object-fit: cover;">
-                <div style="min-width: 0;">
-                  <div class="text-white fw-semibold" style="font-size: 0.95rem;">Marie Tagne</div>
-                  <div style="color: #94A3B8; font-size: 0.8rem;">Électricienne · Yaoundé</div>
-                </div>
-                <div class="ms-auto d-flex align-items-center gap-1 bg-warning bg-opacity-10 text-warning px-2 py-1 rounded">
-                  <i class="fa-solid fa-star" style="font-size: 0.75rem;"></i><span class="fw-bold" style="font-size: 0.8rem;">4.8</span>
-                </div>
-              </div>
-
-              <!-- Pro 3 -->
-              <div class="pro-item p-3 d-flex align-items-center gap-3">
-                <img src="https://i.pravatar.cc/100?img=12" alt="Avatar" class="rounded-circle" style="width: 48px; height: 48px; object-fit: cover;">
-                <div style="min-width: 0;">
-                  <div class="text-white fw-semibold" style="font-size: 0.95rem;">Paul Ndjock</div>
-                  <div style="color: #94A3B8; font-size: 0.8rem;">Maçon · Bafoussam</div>
-                </div>
-                <div class="ms-auto d-flex align-items-center gap-1 bg-warning bg-opacity-10 text-warning px-2 py-1 rounded">
-                  <i class="fa-solid fa-star" style="font-size: 0.75rem;"></i><span class="fw-bold" style="font-size: 0.8rem;">5.0</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Badges flottants -->
-          <div class="floating-badge position-absolute p-3 d-flex align-items-center gap-3" style="bottom: 10%; left: -5%;">
-            <div class="rounded-circle bg-success bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-              <i class="fa-solid fa-check text-success"></i>
-            </div>
-            <div>
-              <div class="fw-bold text-secondary" style="font-size: 0.9rem;">Profils vérifiés</div>
-              <div class="text-muted" style="font-size: 0.75rem;">Artisans de confiance</div>
-            </div>
-          </div>
-
-          <div class="floating-badge position-absolute p-3 d-flex align-items-center gap-3" style="top: 15%; right: -10%; animation-delay: -2s;">
-            <div class="rounded-circle bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-              <i class="fa-solid fa-heart text-primary"></i>
-            </div>
-            <div>
-              <div class="fw-bold text-secondary" style="font-size: 0.9rem;">98% Satisfaits</div>
-              <div class="text-muted" style="font-size: 0.75rem;">Basé sur 2,500+ avis</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
+    <div class="cats">
+      <a class="cat" routerLink="/recherche" *ngFor="let c of categories">
+        <div class="ico"><i class="fa-solid {{c.icon}}"></i></div>
+        <b>{{c.nom}}</b><span>{{c.pros}}</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- SECTION SPÉCIALITÉS -->
-<section id="specialites" class="py-5 bg-light-custom">
-  <div class="container py-lg-5">
-    <div class="text-center mb-5 animate-fade-in">
-      <h2 class="display-6 fw-bolder mb-3">Trouvez votre <span class="text-primary">expert</span></h2>
-      <p class="lead text-muted mx-auto" style="max-width: 600px;">
-        Découvrez les meilleurs professionnels classés par métier pour répondre précisément à vos besoins.
-      </p>
-    </div>
-
-    <!-- Grille Native Bootstrap -->
-    <div class="row g-4">
-      <!-- Card -->
-      <div class="col-6 col-md-4 col-lg-3 animate-fade-in delay-100">
-        <div class="specialty-card">
-          <div class="icon-wrapper" style="background: rgba(59, 130, 246, 0.1);">
-            <i class="fa-solid fa-faucet-drip" style="color: #3B82F6; font-size: 1.8rem;"></i>
-          </div>
-          <h5 class="fw-bold mb-2">Plomberie</h5>
-          <p class="text-muted small mb-0">45 pros disponibles</p>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="col-6 col-md-4 col-lg-3 animate-fade-in delay-200">
-        <div class="specialty-card">
-          <div class="icon-wrapper" style="background: rgba(245, 158, 11, 0.1);">
-            <i class="fa-solid fa-bolt" style="color: #F59E0B; font-size: 1.8rem;"></i>
-          </div>
-          <h5 class="fw-bold mb-2">Électricité</h5>
-          <p class="text-muted small mb-0">38 pros disponibles</p>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="col-6 col-md-4 col-lg-3 animate-fade-in delay-300">
-        <div class="specialty-card">
-          <div class="icon-wrapper" style="background: rgba(239, 68, 68, 0.1);">
-            <i class="fa-solid fa-trowel-bricks" style="color: #EF4444; font-size: 1.8rem;"></i>
-          </div>
-          <h5 class="fw-bold mb-2">Maçonnerie</h5>
-          <p class="text-muted small mb-0">52 pros disponibles</p>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="col-6 col-md-4 col-lg-3 animate-fade-in delay-100">
-        <div class="specialty-card">
-          <div class="icon-wrapper" style="background: rgba(99, 102, 241, 0.1);">
-            <i class="fa-solid fa-paint-roller" style="color: #6366F1; font-size: 1.8rem;"></i>
-          </div>
-          <h5 class="fw-bold mb-2">Peinture</h5>
-          <p class="text-muted small mb-0">29 pros disponibles</p>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="col-6 col-md-4 col-lg-3 animate-fade-in delay-200">
-        <div class="specialty-card">
-          <div class="icon-wrapper" style="background: rgba(16, 185, 129, 0.1);">
-            <i class="fa-solid fa-border-all" style="color: #10B981; font-size: 1.8rem;"></i>
-          </div>
-          <h5 class="fw-bold mb-2">Carrelage</h5>
-          <p class="text-muted small mb-0">21 pros disponibles</p>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="col-6 col-md-4 col-lg-3 animate-fade-in delay-300">
-        <div class="specialty-card">
-          <div class="icon-wrapper" style="background: rgba(234, 88, 12, 0.1);">
-            <i class="fa-solid fa-hammer" style="color: #EA580C; font-size: 1.8rem;"></i>
-          </div>
-          <h5 class="fw-bold mb-2">Menuiserie</h5>
-          <p class="text-muted small mb-0">33 pros disponibles</p>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="col-6 col-md-4 col-lg-3 animate-fade-in delay-100">
-        <div class="specialty-card">
-          <div class="icon-wrapper" style="background: rgba(147, 51, 234, 0.1);">
-            <i class="fa-solid fa-fire-flame-curved" style="color: #9333EA; font-size: 1.8rem;"></i>
-          </div>
-          <h5 class="fw-bold mb-2">Soudure</h5>
-          <p class="text-muted small mb-0">18 pros disponibles</p>
-        </div>
-      </div>
-      <!-- Card -->
-      <div class="col-6 col-md-4 col-lg-3 animate-fade-in delay-200">
-        <div class="specialty-card">
-          <div class="icon-wrapper" style="background: rgba(8, 145, 178, 0.1);">
-            <i class="fa-solid fa-snowflake" style="color: #0891B2; font-size: 1.8rem;"></i>
-          </div>
-          <h5 class="fw-bold mb-2">Climatisation</h5>
-          <p class="text-muted small mb-0">15 pros disponibles</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION COMMENT ÇA MARCHE -->
-<section id="comment-ca-marche" class="py-5 bg-white">
-  <div class="container py-lg-5">
-    <div class="text-center mb-5 animate-fade-in">
-      <h2 class="display-6 fw-bolder mb-3">En 3 étapes <span class="text-primary">simples</span></h2>
-      <p class="lead text-muted mx-auto" style="max-width: 600px;">
-        Un processus transparent pour vous garantir la meilleure expérience de mise en relation.
-      </p>
-    </div>
-
-    <div class="row g-4 position-relative">
-      <!-- Ligne de connexion (Desktop seulement) -->
-      <div class="d-none d-md-block position-absolute" style="top: 25%; left: 15%; right: 15%; height: 2px; border-top: 2px dashed rgba(15,23,42,0.1); z-index: 0;"></div>
-
-      <!-- Étape 1 -->
-      <div class="col-md-4 animate-fade-in delay-100">
-        <div class="step-card text-center">
-          <div class="step-number position-relative z-1">1</div>
-          <h4 class="fw-bold mb-3">Recherchez</h4>
-          <p class="text-muted mb-0">
-            Saisissez le métier ou le service recherché ainsi que votre ville pour voir les artisans.
-          </p>
-        </div>
-      </div>
-
-      <!-- Étape 2 -->
-      <div class="col-md-4 animate-fade-in delay-200">
-        <div class="step-card text-center">
-          <div class="step-number position-relative z-1" style="background: var(--secondary);">2</div>
-          <h4 class="fw-bold mb-3">Comparez</h4>
-          <p class="text-muted mb-0">
-            Consultez les portfolios, lisez les avis vérifiés des autres clients et choisissez.
-          </p>
-        </div>
-      </div>
-
-      <!-- Étape 3 -->
-      <div class="col-md-4 animate-fade-in delay-300">
-        <div class="step-card text-center">
-          <div class="step-number position-relative z-1" style="background: var(--accent);">3</div>
-          <h4 class="fw-bold mb-3">Contactez</h4>
-          <p class="text-muted mb-0">
-            Entrez en contact direct via messagerie ou téléphone pour lancer vos travaux.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION CTA PREMIUM -->
-<section class="py-5 bg-light-custom">
-  <div class="container py-lg-4">
-    <div class="cta-premium p-4 p-md-5 shadow-xl animate-fade-in">
-      <div class="row align-items-center text-center text-lg-start">
-        <div class="col-lg-8 mb-4 mb-lg-0 position-relative z-1">
-          <span class="badge bg-white bg-opacity-10 text-white rounded-pill px-3 py-2 mb-3 border border-white border-opacity-25">
-            <i class="fa-solid fa-briefcase me-2"></i>Espace Professionnel
-          </span>
-          <h2 class="display-5 fw-bolder text-white mb-3">
-            Boostez votre activité <br class="d-none d-md-block">avec BTPConnect
-          </h2>
-          <p class="lead text-white text-opacity-75 mb-0" style="max-width: 600px;">
-            Créez votre profil gratuitement, gagnez en visibilité locale et recevez directement des demandes de chantiers qualifiées.
-          </p>
-        </div>
-        <div class="col-lg-4 text-lg-end position-relative z-1">
-          <a routerLink="/technicien/register" class="btn btn-primary-custom btn-lg w-100 w-md-auto shadow-lg" style="padding: 1rem 2rem; font-size: 1.1rem;">
-            Créer mon compte Pro <i class="fa-solid fa-arrow-right ms-2"></i>
-          </a>
-          <div class="mt-3 text-white text-opacity-50 small">
-            Sans engagement • Inscription en 2 min
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-white py-5 border-top">
+<!-- PROFESSIONNELS EN VEDETTE -->
+<section class="block" style="background:#fff;padding-top:0">
   <div class="container">
-    <div class="row g-4 mb-5">
-      <!-- Brand -->
-      <div class="col-lg-4">
-        <div class="d-flex align-items-center gap-2 mb-4">
-          <div class="logo-icon d-flex align-items-center justify-content-center rounded-circle"
-               style="background: var(--primary); color: white; font-weight: 800; font-size: 1rem; width: 36px; height: 36px;">
-            BC
-          </div>
-          <span style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.2rem; color: var(--secondary);">
-            BTP<span style="color: var(--primary);">Connect</span>
-          </span>
-        </div>
-        <p class="text-muted pe-lg-4 mb-4">
-          La plateforme nouvelle génération qui réinvente la mise en relation entre artisans et particuliers au Cameroun.
-        </p>
-        <div class="d-flex gap-3">
-          <a href="#" class="d-flex align-items-center justify-content-center rounded-circle bg-light text-secondary" style="width: 40px; height: 40px; transition: all 0.3s;" onmouseover="this.className='d-flex align-items-center justify-content-center rounded-circle bg-primary text-white'" onmouseout="this.className='d-flex align-items-center justify-content-center rounded-circle bg-light text-secondary'"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="d-flex align-items-center justify-content-center rounded-circle bg-light text-secondary" style="width: 40px; height: 40px; transition: all 0.3s;" onmouseover="this.className='d-flex align-items-center justify-content-center rounded-circle bg-primary text-white'" onmouseout="this.className='d-flex align-items-center justify-content-center rounded-circle bg-light text-secondary'"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="d-flex align-items-center justify-content-center rounded-circle bg-light text-secondary" style="width: 40px; height: 40px; transition: all 0.3s;" onmouseover="this.className='d-flex align-items-center justify-content-center rounded-circle bg-primary text-white'" onmouseout="this.className='d-flex align-items-center justify-content-center rounded-circle bg-light text-secondary'"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
-      </div>
-
-      <!-- Links -->
-      <div class="col-6 col-lg-2 offset-lg-1">
-        <h6 class="fw-bold mb-4">Plateforme</h6>
-        <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
-          <li><a href="#" class="text-muted text-decoration-none hover-primary">Accueil</a></li>
-          <li><a href="#specialites" class="text-muted text-decoration-none hover-primary">Spécialités</a></li>
-          <li><a href="#comment-ca-marche" class="text-muted text-decoration-none hover-primary">Comment ça marche</a></li>
-          <li><a href="#" class="text-muted text-decoration-none hover-primary">Avis clients</a></li>
-        </ul>
-      </div>
-
-      <!-- Pro -->
-      <div class="col-6 col-lg-2">
-        <h6 class="fw-bold mb-4">Professionnels</h6>
-        <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
-          <li><a href="#" class="text-muted text-decoration-none hover-primary">S'inscrire</a></li>
-          <li><a href="#" class="text-muted text-decoration-none hover-primary">Avantages</a></li>
-          <li><a href="#" class="text-muted text-decoration-none hover-primary">Tarification</a></li>
-          <li><a href="#" class="text-muted text-decoration-none hover-primary">Centre d'aide</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact -->
-      <div class="col-lg-3">
-        <h6 class="fw-bold mb-4">Contactez-nous</h6>
-        <ul class="list-unstyled d-flex flex-column gap-3 text-muted mb-0">
-          <li class="d-flex align-items-center gap-3"><i class="fa-solid fa-envelope text-primary"></i> hello@btpconnect.cm</li>
-          <li class="d-flex align-items-center gap-3"><i class="fa-solid fa-phone text-primary"></i> +237 600 000 000</li>
-          <li class="d-flex align-items-start gap-3"><i class="fa-solid fa-location-dot text-primary mt-1"></i> Akwa, Douala<br>Cameroun</li>
-        </ul>
-      </div>
+    <div class="row between center">
+      <div><span class="eyebrow">Sélection</span><h2 class="sec-title mt-1">Professionnels près de vous</h2></div>
+      <a class="btn btn-ghost btn-sm" routerLink="/recherche">Voir tout</a>
     </div>
-
-    <!-- Bottom -->
-    <div class="row pt-4 border-top">
-      <div class="col-md-6 text-center text-md-start text-muted small mb-3 mb-md-0">
-        &copy; 2026 BTPConnect. Tous droits réservés.
-      </div>
-      <div class="col-md-6 d-flex justify-content-center justify-content-md-end gap-4 small">
-        <a href="#" class="text-muted text-decoration-none hover-primary">Mentions légales</a>
-        <a href="#" class="text-muted text-decoration-none hover-primary">Confidentialité</a>
-        <a href="#" class="text-muted text-decoration-none hover-primary">CGU</a>
+    <div class="pro-grid">
+      <div class="pro-card" *ngFor="let p of pros">
+        <div class="cover"></div>
+        <div class="av">{{p.initiales}}</div>
+        <div class="body">
+          <div class="row between center">
+            <h4>{{p.nom}}</h4>
+            <span class="badge verified"><i class="fa-solid fa-circle-check"></i></span>
+          </div>
+          <div class="pro-meta"><i class="fa-solid fa-location-dot"></i> {{p.ville}} · {{p.specialite}}</div>
+          <div class="tags">
+            <span class="badge" *ngFor="let t of p.tags">{{t}}</span>
+          </div>
+          <div class="row between center">
+            <span><span class="stars" style="font-size:.85rem">★★★★★</span> <b>{{p.note}}</b> <small class="muted">({{p.avis}})</small></span>
+            <span class="badge" [ngClass]="dispoClass(p.dispo)">● {{p.dispo}}</span>
+          </div>
+          <a class="btn btn-primary btn-block btn-sm mt-2" routerLink="/professionnels/1">Voir le profil</a>
+        </div>
       </div>
     </div>
   </div>
-</footer>
+</section>
 
-<style>
-  .hover-primary:hover { color: var(--primary) !important; }
-</style>
+<!-- COMMENT ÇA MARCHE -->
+<section class="block">
+  <div class="container" style="text-align:center">
+    <span class="eyebrow">Simple & sécurisé</span><h2 class="sec-title mt-1">Comment ça marche ?</h2>
+    <div class="steps" style="text-align:left">
+      <div class="step"><div class="num">1</div><h4>Recherchez</h4><p class="mt-1">Filtrez par spécialité, ville, disponibilité et note. Visualisez les pros sur la carte.</p></div>
+      <div class="step"><div class="num">2</div><h4>Comparez</h4><p class="mt-1">Consultez portfolios, avis vérifiés et recommandations entre pairs. Ajoutez vos favoris.</p></div>
+      <div class="step"><div class="num">3</div><h4>Contactez</h4><p class="mt-1">Envoyez une demande de devis via la messagerie. Laissez un avis après la prestation.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="block" style="background:#fff;padding-top:0">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2>Vous êtes un professionnel du bâtiment ?</h2>
+        <p style="opacity:.9;margin-top:.5rem">Rejoignez +2 500 techniciens et développez votre clientèle dès aujourd'hui.</p>
+      </div>
+      <a class="btn btn-lg" style="background:#fff;color:var(--blue-700)" routerLink="/devenir-pro">Créer mon profil pro</a>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

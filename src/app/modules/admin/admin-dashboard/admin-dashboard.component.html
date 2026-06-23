@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<div class="container page">
+  <div class="row between center"><div><span class="eyebrow">Back-office</span><h2 class="mt-1">Administration</h2></div><span class="badge">Connecté : Admin</span></div>
+
+  <div class="stat-grid mt-3">
+    <div class="stat"><div class="ico"><i class="fa-solid fa-user"></i></div><div class="n">2 512</div><small class="muted">Techniciens</small></div>
+    <div class="stat"><div class="ico"><i class="fa-solid fa-users"></i></div><div class="n">1 540</div><small class="muted">Clients</small></div>
+    <div class="stat"><div class="ico"><i class="fa-solid fa-arrow-trend-up"></i></div><div class="n">8 930</div><small class="muted">Mises en relation</small></div>
+    <div class="stat"><div class="ico"><i class="fa-solid fa-credit-card"></i></div><div class="n">1.8M</div><small class="muted">Revenus FCFA (mois)</small></div>
+  </div>
+
+  <div class="admin-tabs mt-3">
+    <span class="chip active">Profils en attente (12)</span><span class="chip">Avis signalés (3)</span><span class="chip">Abonnements</span><span class="chip">Paramètres</span>
+  </div>
+
+  <div class="grid" style="grid-template-columns:1.5fr 1fr;gap:20px">
+    <div class="card card-pad">
+      <h4>Validation des profils (KYC)</h4>
+      <table class="tbl mt-2">
+        <thead><tr><th>Technicien</th><th>Spécialité</th><th>Documents</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr *ngFor="let t of enAttente">
+            <td><div class="row center gap-2"><span class="avatar sm">{{t.initiales}}</span><div><b>{{t.nom}}</b><br><small class="muted">{{t.ville}}</small></div></div></td>
+            <td>{{t.specialite}}</td>
+            <td><div class="row gap-1"><span class="doc-thumb" *ngFor="let d of docsArray(t.docs)"><i class="fa-solid fa-file-lines"></i></span></div></td>
+            <td><div class="row gap-1"><button class="btn btn-primary btn-sm">Valider</button><button class="btn btn-outline btn-sm">Rejeter</button></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card card-pad">
+      <h4>Avis signalés</h4>
+      <div class="review" *ngFor="let a of signales">
+        <div class="row between"><b>{{a.sujet}}</b><span class="badge" [ngClass]="a.nbClass">{{a.nb}}</span></div>
+        <p class="muted mt-1" style="font-size:.85rem">{{a.extrait}}</p>
+        <div class="row gap-1 mt-2"><button class="btn btn-ghost btn-sm">Restaurer</button><button class="btn btn-outline btn-sm" style="color:var(--danger)">Supprimer</button></div>
+      </div>
+    </div>
+  </div>
+</div>

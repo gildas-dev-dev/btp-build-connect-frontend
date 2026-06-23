@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<div class="container page">
+  <span class="eyebrow">Actualités &amp; conseils</span><h2 class="mt-1">Blog &amp; Conseils</h2>
+  <p class="muted">Guides, astuces et actualités du secteur BTP au Cameroun.</p>
+
+  <div class="blog-grid">
+    <article class="post" *ngFor="let a of articles">
+      <div class="img ph"></div>
+      <div class="body">
+        <span class="badge">{{a.categorie}}</span>
+        <h4>{{a.titre}}</h4>
+        <p class="muted" style="font-size:.88rem">{{a.extrait}}</p>
+        <small class="muted">{{a.date}}</small>
+      </div>
+    </article>
+  </div>
+
+  <div class="card card-pad mt-4" style="display:flex;align-items:center;justify-content:space-between;gap:1.5rem;background:var(--blue-50);border:0">
+    <div><h4>Besoin d'aide ?</h4><p class="muted">Notre équipe vous accompagne dans votre recherche de professionnel.</p></div>
+    <a class="btn btn-primary" routerLink="/client/messages">Nous contacter</a>
+  </div>
+</div>
+
+<app-footer></app-footer>
